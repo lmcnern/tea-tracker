@@ -1,0 +1,17 @@
+{
+  "name": "tea-shelf",
+  "version": "0.0.1",
+  "description": "An app to check in to what tea you are drinking and to keep track of your collection.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "tea"
+  ],
+  "author": "",
+  "license": "ISC"
+}
