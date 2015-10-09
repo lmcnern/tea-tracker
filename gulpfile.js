@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
 var webpack = require('gulp-webpack');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
