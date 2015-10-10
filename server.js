@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
+var config = require('./configFile');
 
 app.use(express.static(__dirname + '/public'));
 mongoose.connect('mongodb://localhost/app');
@@ -14,9 +15,10 @@ db.once('open', function (callback) {
 });
 
 //routes
-var teaRoutes = express.Router();
-require('./routes/tea-routes')(teaRoutes);
-app.use('/api', teaRoutes);
+var router = express.Router();
+require(__dirname + '/routes/tea-routes')(router);
+require(__dirname + '/routes/user-routes')(router);
+app.use('/api', router);
 
 //404 error
 app.all('*', function(req, res) {
