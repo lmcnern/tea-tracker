@@ -27,17 +27,6 @@ gulp.task('karmatest', ['webpack:test'], function(done) {
   }, done).start();
 });
 
-gulp.task('sass', function() {
-  gulp.src('./app/sass/application.sass')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(minifyCSS({compatibility: 'ie8'}))
-      .pipe(gulp.dest('./public/css/'));
-});
-
-gulp.task('sass:watch', function() {
-  gulp.watch('./app/sass/**/*.sass', ['sass']);
-});
-
 gulp.task('webpackdev', function() {
   return gulp.src('./app/js/**/*.js')
              .pipe(webpack({
@@ -76,4 +65,4 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('default', ['jshint', 'test']);
-gulp.task('build', ['copy', 'webpackdev', 'sass']);
+gulp.task('build', ['copy', 'webpackdev']);
